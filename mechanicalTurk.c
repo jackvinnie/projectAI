@@ -15,13 +15,10 @@
 
 action decideAction (Game g) {
    action nextAction;
-   int currentPlayer = getWhoseTurn(g);
    
-   if (currentPlayer != NO_ONE ) {
-      nextAction.actionCode = START_SPINOFF; //attempting to start a spinoff
-      if (isLegalAction(g, nextAction) == FALSE) {
-	      nextAction.actionCode = PASS; //If illegal move, then PASS
-      }
+   nextAction.actionCode = START_SPINOFF; //attempting to start a spinoff
+   if (isLegalAction(g, nextAction) == FALSE) {
+	   nextAction.actionCode = PASS; //If illegal move, then PASS
    }
    
    return nextAction;
